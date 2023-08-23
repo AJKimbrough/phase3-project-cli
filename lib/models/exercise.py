@@ -10,3 +10,11 @@ class Exercise(Base):
     difficulty = Column(String)
     started_at = Column(DateTime, default=datetime.now())
     completed_at = Column(DateTime)
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True)
+    user_name = Column(String)
+    age = Column(Integer)
+    
