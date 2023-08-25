@@ -11,6 +11,8 @@ class Exercise(Base):
     started_at = Column(DateTime, default=datetime.now())
     completed_at = Column(DateTime)
 
+    user_id = Column(Integer, ForeignKey('users.id'))
+
 class User(Base):
     __tablename__ = 'users'
 
