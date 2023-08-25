@@ -1,6 +1,7 @@
 from sqlalchemy import String, Integer, DateTime, Column, ForeignKey
 from .base import Base
 from datetime import datetime
+from sqlalchemy.orm import relationship, backref
 
 class Exercise(Base):
     __tablename__ = 'exercises'
@@ -19,4 +20,6 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     user_name = Column(String)
     age = Column(Integer)
+
+    exercises = relationship("Exercise", backref=backref('the_user'))
     
